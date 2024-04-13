@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "58107959915",
+    "firebase_url": "https://temi-haregame-default-rtdb.firebaseio.com",
+    "project_id": "temi-haregame",
+    "storage_bucket": "temi-haregame.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:58107959915:android:cdb13d555bd4836b70ef2e",
+        "android_client_info": {
+          "package_name": "com.example.grharegame"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "58107959915-acs4hr8uf8n0a644u7gn65ip4u58jsig.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAN2Ui_JLONlaiDtQUH01x38K7WBytiNsM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "58107959915-acs4hr8uf8n0a644u7gn65ip4u58jsig.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:58107959915:android:85153583cb61fedf70ef2e",
+        "android_client_info": {
+          "package_name": "com.example.temi_haregame"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "58107959915-acs4hr8uf8n0a644u7gn65ip4u58jsig.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAN2Ui_JLONlaiDtQUH01x38K7WBytiNsM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "58107959915-acs4hr8uf8n0a644u7gn65ip4u58jsig.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:58107959915:android:190f1fac3fb0bce770ef2e",
+        "android_client_info": {
+          "package_name": "com.main.HareAndHounds"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "58107959915-acs4hr8uf8n0a644u7gn65ip4u58jsig.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAN2Ui_JLONlaiDtQUH01x38K7WBytiNsM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "58107959915-acs4hr8uf8n0a644u7gn65ip4u58jsig.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
