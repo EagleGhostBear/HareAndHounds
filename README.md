@@ -3,6 +3,7 @@
 
 ## 개발환경
 ![Static Badge](https://img.shields.io/badge/Android%20Studio-green?style=for-the-badge&logo=Android&logoColor=34A853)
+![Static Badge](https://img.shields.io/badge/Firebase-yellow?style=for-the-badge&logo=Firebase&logoColor=FFCA28)
 <br>
 ![Static Badge](https://img.shields.io/badge/Build-Android%208.0%20(OREO)-3DDC84)
 
