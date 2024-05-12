@@ -14,8 +14,8 @@
 </p>
 
 ## 시연 영상
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/T-ztd9wEI9E" title="Temi Project - Hare And Hounds" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-<br><br>
+[![시연 영상](https://img.youtube.com/vi/T-ztd9wEI9E/0.jpg)](https://www.youtube.com/watch?v=T-ztd9wEI9E)
+
 왼쪽 하단 : Player1(Hounds)
 오른쪽 하단 : Player2(Hare)
 
