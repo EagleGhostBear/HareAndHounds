@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -71,9 +72,7 @@ public class MainActivity extends AppCompatActivity
         select_hounds=false;
         select_hare=false;
 
-        databaseReference.child("connect").child("hounds").setValue(0);
-        databaseReference.child("connect").child("hare").setValue(0);
-        databaseReference.child("connect").child("success").setValue(0);
+        databaseReference.child("connect").removeValue();
 
         main_btn_start.setOnClickListener(new View.OnClickListener()
         {
@@ -202,79 +201,94 @@ public class MainActivity extends AppCompatActivity
         databaseReference.child("connect/hounds").addValueEventListener(new ValueEventListener()
         {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot)
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot)
             {
-                Object rdata = snapshot.getValue();
-                check_connect=Integer.parseInt(rdata.toString());
-                if(check_connect==1)
-                {
-                    check_connect_honds=true;
-                }
-                if(check_connect_honds && check_connect_hare)
-                {
-                    databaseReference.child("connect").child("success").setValue(1);
+                if(dataSnapshot.exists()){ // onDataChange null 참초 에러 방지
+                    Object rdata = dataSnapshot.getValue();
+                    check_connect=Integer.parseInt(rdata.toString());
+                    if(check_connect==1)
+                    {
+                        check_connect_honds=true;
+                    }
+                    if(check_connect_honds && check_connect_hare)
+                    {
+                        databaseReference.child("connect").child("success").setValue(1);
+                    }
                 }
             }
 
             @Override
-            public void onCancelled(@NonNull DatabaseError error) {}
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                // 데이터 읽기 실패
+                Log.e("Firebase", "Failed to read data.", databaseError.toException());
+            }
         });
 
         databaseReference.child("connect/hare").addValueEventListener(new ValueEventListener()
         {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot)
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot)
             {
-                Object rdata = snapshot.getValue();
-                check_connect=Integer.parseInt(rdata.toString());
-                if(check_connect==1)
-                {
-                    check_connect_hare=true;
-                }
-                if(check_connect_honds && check_connect_hare)
-                {
-                    databaseReference.child("connect").child("success").setValue(1);
+                if(dataSnapshot.exists()){ // onDataChange null 참초 에러 방지
+                    Object rdata = dataSnapshot.getValue();
+                    check_connect=Integer.parseInt(rdata.toString());
+                    if(check_connect==1)
+                    {
+                        check_connect_hare=true;
+                    }
+                    if(check_connect_honds && check_connect_hare)
+                    {
+                        databaseReference.child("connect").child("success").setValue(1);
+                    }
                 }
             }
 
             @Override
-            public void onCancelled(@NonNull DatabaseError error) {}
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                // 데이터 읽기 실패
+                Log.e("Firebase", "Failed to read data.", databaseError.toException());
+            }
         });
 
         databaseReference.child("connect/success").addValueEventListener(new ValueEventListener()
         {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot)
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot)
             {
-                Object rdata = snapshot.getValue();
-                check_connect=Integer.parseInt(rdata.toString());
-                if(check_connect==1)
-                {
-                    check_connect_honds=false;
-                    check_connect_hare=false;
-                    if(select_hounds)
+                if(dataSnapshot.exists()){ // onDataChange null 참초 에러 방지
+                    Object rdata = dataSnapshot.getValue();
+                    check_connect=Integer.parseInt(rdata.toString());
+                    if(check_connect==1)
                     {
-                        select_hounds=false;
-                        select_hare=false;
-                        connecting.setVisibility(View.INVISIBLE);
-                        main_btn_start.setVisibility(View.VISIBLE);
-                        Intent intent2 = new Intent(getApplicationContext(), PlayActivity2_hounds.class);
-                        startActivity(intent2);
-                    }
-                    if(select_hare)
-                    {
-                        select_hounds=false;
-                        select_hare=false;
-                        connecting.setVisibility(View.INVISIBLE);
-                        main_btn_start.setVisibility(View.VISIBLE);
-                        Intent intent3 = new Intent(getApplicationContext(), PlayActivity2_hare.class);
-                        startActivity(intent3);
+                        check_connect_honds=false;
+                        check_connect_hare=false;
+                        if(select_hounds)
+                        {
+                            select_hounds=false;
+                            select_hare=false;
+                            connecting.setVisibility(View.INVISIBLE);
+                            main_btn_start.setVisibility(View.VISIBLE);
+                            Intent intent2 = new Intent(getApplicationContext(), PlayActivity2_hounds.class);
+                            startActivity(intent2);
+                        }
+                        if(select_hare)
+                        {
+                            select_hounds=false;
+                            select_hare=false;
+                            connecting.setVisibility(View.INVISIBLE);
+                            main_btn_start.setVisibility(View.VISIBLE);
+                            Intent intent3 = new Intent(getApplicationContext(), PlayActivity2_hare.class);
+                            startActivity(intent3);
+                        }
                     }
                 }
             }
 
             @Override
-            public void onCancelled(@NonNull DatabaseError error) {}
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                // 데이터 읽기 실패
+                Log.e("Firebase", "Failed to read data.", databaseError.toException());
+            }
         });
     }
 }

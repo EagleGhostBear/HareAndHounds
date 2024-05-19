@@ -2,65 +2,39 @@ package com.main.HareAndHounds.functions;
 
 import android.widget.ImageView;
 
-public class Node
-{
-    public ImageView myimage;
-    public int boardnum;
-    public int deepth;
-    public boolean hound;
-    public boolean hare;
-    public boolean select;
-    public boolean connect;
-    public Node up;
-    public Node down;
-    public Node left;
-    public Node right;
-    public Node upleft;
-    public Node upright;
-    public Node downleft;
-    public Node downright;
+public class Node implements Comparable<Node> {
+    // 내가 몇번 보드인지 ex) 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+    public int id;
 
-    public Node()
-    {
-        ImageView myimage = null;
+    // 보드의 이미지
+    public ImageView img;
 
-        int boardnum=0;
-        int deepth=0;
+    // 보드가 몇번째 라인인지, Hounds는 뒤로 갈 수 없기 때문에 이를 파악하기 위해 사용
+    public int depth;
 
-        boolean hound = false;
-        boolean hare = false;
-        boolean select = false;
-        boolean connect = false;
-
-        Node up = null;
-        Node down = null;
-        Node left = null;
-        Node right = null;
-        Node upleft = null;
-        Node upright = null;
-        Node downleft = null;
-        Node downright = null;
+    public Node(int id, ImageView img) {
+        this.id = id;
+        this.img = img;
+        if(id < 1){
+            depth = 0;
+        }
+        else if (id < 4) {
+            depth = 1;
+        } else if (id < 7) {
+            depth = 2;
+        } else if (id < 10) {
+            depth = 3;
+        } else {
+            depth = 4;
+        }
     }
 
-    public void setvalue(ImageView myimage, int boardnum, int deepth, boolean hound, boolean hare, boolean select, boolean connect, Node up, Node down, Node left, Node right, Node upleft, Node upright, Node downleft, Node downright)
-    {
-        this.myimage = myimage;
-
-        this.boardnum = boardnum;
-        this.deepth = deepth;
-
-        this.hound = hound;
-        this.hare = hare;
-        this.select = select;
-        this.connect = connect;
-
-        this.up = up;
-        this.down = down;
-        this.left = left;
-        this.right = right;
-        this.upleft = upleft;
-        this.upright = upright;
-        this.downleft = downleft;
-        this.downright = downright;
+    @Override
+    public int compareTo(Node o) {
+        int depthCompare = Integer.compare(this.depth, o.depth);
+        if (depthCompare == 0) {
+            return Integer.compare(this.id, o.id);
+        }
+        return depthCompare;
     }
 }
