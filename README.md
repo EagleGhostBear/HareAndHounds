@@ -7,6 +7,28 @@
 <br>
 ![Static Badge](https://img.shields.io/badge/Build-Android%208.0%20(OREO)-3DDC84)
 
+## 실행 방법
+1. Android Studio 프로젝트 열기
+2. Add Configuration 클릭
+<p align="left">
+  <img width="70%" src="./images/set1.jpg">
+</p>
+
+3. 왼쪽 상단 + Add New Configuration 클릭 후, Android App 클릭
+<p align="left">
+  <img width="70%" src="./images/set2.jpg">
+</p>
+
+4. Module에서 HareAndHounds.app.main을 선택하고 OK 누르시면 실행 버튼이 활성화 됩니다.
+<p align="left">
+  <img width="70%" src="./images/set3.jpg">
+</p>
+
+## 번호 정의
+<p align="left">
+  <img width="50%" src="./images/board_num.jpg">
+</p>
+
 ## 애플리케이션 화면
 <p align="left">
   <img width="50%" src="./images/main1.jpg">
