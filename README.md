@@ -11,17 +11,17 @@
 1. Android Studio 프로젝트 열기
 2. Add Configuration 클릭
 <p align="left">
-  <img width="70%" src="./images/set1.JPG">
+  <img width="70%" src="./images/set1.jpg">
 </p>
 
 3. 왼쪽 상단 + Add New Configuration 클릭 후, Android App 클릭
 <p align="left">
-  <img width="70%" src="./images/set2.JPG">
+  <img width="70%" src="./images/set2.jpg">
 </p>
 
 4. Module에서 HareAndHounds.app.main을 선택하고 OK 누르시면 실행 버튼이 활성화 됩니다.
 <p align="left">
-  <img width="70%" src="./images/set3.JPG">
+  <img width="70%" src="./images/set3.jpg">
 </p>
 
 ## 번호 정의
